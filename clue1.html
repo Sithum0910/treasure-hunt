@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clue 1 - Virtual Treasure Hunt</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Clue 1: The Riddle</h1>
+    <p>I speak without a mouth and hear without ears. What am I?</p>
+    <input type="text" id="answer" placeholder="Your answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="result" class="hidden">Correct! Proceed to the next clue.</p>
+  </div>
+  <script>
+    function checkAnswer() {
+      const answer = document.getElementById("answer").value.toLowerCase();
+      if (answer === "echo") {
+        document.getElementById("result").classList.remove("hidden");
+        setTimeout(() => {
+          window.location.href = "clue2.html";
+        }, 2000); // Redirect after 2 seconds
+      } else {
+        alert("Try again!");
+      }
+    }
+  </script>
+</body>
+</html>
